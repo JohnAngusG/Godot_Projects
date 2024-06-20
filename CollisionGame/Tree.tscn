@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfsnd6biq2lh"]
+
+[ext_resource type="Material" uid="uid://cqwey6enwepnb" path="res://tree_Color.tres" id="1_3c61e"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ivl3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0usm"]
+albedo_color = Color(0.16, 0.15168, 0.0352, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xioxq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4xmt4"]
+height = 0.87406
+
+[node name="Tree" type="RigidBody3D" groups=["Tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.290456, 0, 1.31981, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.347527, 0, 0, 0, 0.703549, 0, 0, 0, 1.2144, 0, -0.527186, 0)
+mesh = SubResource("CylinderMesh_ivl3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_e0usm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.12383, 0, 0, 0, 0.40204, 0, 0, 0, 2.86057, 0, 0.235523, 0)
+mesh = SubResource("SphereMesh_xioxq")
+surface_material_override/0 = ExtResource("1_3c61e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.944832, 0, 0, 0, 0.40204, 0, 0, 0, 2.86057, 0, 0.46947, 0)
+material_override = ExtResource("1_3c61e")
+mesh = SubResource("SphereMesh_xioxq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.579976, 0, 0, 0, 0.40204, 0, 0, 0, 2.86057, 0, 0.649087, 0)
+material_override = ExtResource("1_3c61e")
+mesh = SubResource("SphereMesh_xioxq")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.324237, 0, 0, 0, 0.40204, 0, 0, 0, 2.86057, 0, 0.826282, 0)
+material_override = ExtResource("1_3c61e")
+mesh = SubResource("SphereMesh_xioxq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.372383, 0, 0, 0, 1.68664, 0, 0, 0, 2.26202, 0, -0.419445, -0.0379163)
+shape = SubResource("CylinderShape3D_4xmt4")

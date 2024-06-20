@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcx4rkm4knwr7"]
+
+[ext_resource type="Material" uid="uid://dx5rxuxvrdpvu" path="res://Materials/TestMaterial.tres" id="1_cqfgt"]
+[ext_resource type="Material" uid="uid://bce66viv6qb7r" path="res://Materials/Tester_Material.tres" id="2_0kjms"]
+[ext_resource type="Material" uid="uid://d4dml6qvbhbf1" path="res://Materials/TextureBall.tres" id="3_xek6j"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qgt12"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_36g4w"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.39267, 0, 0, 0, 1.28973, 0, 0, 0, 1.444, 0, 0, 0)
+material_override = ExtResource("1_cqfgt")
+mesh = SubResource("SphereMesh_qgt12")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.354033, 0, 0, 0, 0.453088, 0, 0, 0, 0.338093, 0, 1.13599, 0)
+material_override = ExtResource("2_0kjms")
+mesh = SubResource("SphereMesh_qgt12")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.718047, 0, 0, 0, 0.775357, 0, 0, 0, 0.69252, 0, 0.571414, 0)
+material_override = ExtResource("3_xek6j")
+mesh = SubResource("SphereMesh_qgt12")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.10056, -3.5899e-06, 6.46689e-14, -9.53048e-07, -0.11169, 0.0940176, -1.47381e-06, -0.17272, -0.0607971, -0.00670026, 0.829766, 0.449497)
+material_override = ExtResource("1_cqfgt")
+mesh = SubResource("CylinderMesh_36g4w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.10056, -3.5899e-06, 1.84632e-13, -5.76414e-07, -0.0675518, -0.105752, 1.65775e-06, 0.194277, -0.036771, -0.00670026, 0.990442, -0.594136)
+material_override = ExtResource("1_cqfgt")
+mesh = SubResource("CylinderMesh_36g4w")
