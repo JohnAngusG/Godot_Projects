@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dokfuuqmroj67"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_elo41"]
+[ext_resource type="Texture2D" uid="uid://b7v77tpl04fsy" path="res://Sprites/Characters/character_0026.png" id="2_lpj7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j13m7"]
+radius = 6.08276
+
+[node name="Bat" type="Area2D"]
+script = ExtResource("1_elo41")
+move_speed = 50.0
+move_direction = Vector2(0, -50)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_lpj7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j13m7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
