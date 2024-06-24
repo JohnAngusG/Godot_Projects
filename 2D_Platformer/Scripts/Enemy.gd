@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 @export var move_speed : float = 30.0
 @export var move_direction : Vector2 
 
@@ -15,6 +17,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)
+	
+	_animated_sprite.play("fly")
 	
 	if global_position == target_pos:
 		if global_position == start_pos:
