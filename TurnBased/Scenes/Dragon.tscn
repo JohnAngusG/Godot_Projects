@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://djeocryoaexlr"]
+
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_fboip"]
+[ext_resource type="Texture2D" uid="uid://bggfi8xvbp601" path="res://Sprites/Dragon.png" id="1_vd2e7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5xju"]
+bg_color = Color(0.13, 0.104, 0.104433, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fluag"]
+bg_color = Color(1, 0, 0.0166664, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kyg0m"]
+font_size = 20
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_fboip")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_vd2e7")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -79.0
+offset_top = 76.0
+offset_right = 95.0
+offset_bottom = 105.0
+theme_override_styles/background = SubResource("StyleBoxFlat_x5xju")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fluag")
+value = 50.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 29.0
+text = "25/25"
+label_settings = SubResource("LabelSettings_kyg0m")
+horizontal_alignment = 1
+vertical_alignment = 1
