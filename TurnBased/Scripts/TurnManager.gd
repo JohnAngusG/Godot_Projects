@@ -12,9 +12,7 @@ signal character_begin_turn(character)
 signal character_end_turn(character)
 
 func _ready():
-	await get_tree().create_timer(0.5).timeout
 	begin_next_turn()
-
 
 func begin_next_turn():
 	if curr_char == player_char:

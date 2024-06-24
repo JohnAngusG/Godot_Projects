@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_htfqk")
-display_name = "Action (x DMG)"
-damage_amount = 0
+display_name = "Slash  (5 DMG)"
+damage_amount = 5
 heal = 0
